@@ -1,0 +1,65 @@
+  .contacts-form {
+
+    &__wrapper {
+        background: url(../img/backgraund2.jpg) 
+        no-repeat center/cover;
+        min-height: 740px;
+        width: 100%;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+    }
+}
+
+// .form {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+//        &__body {
+//         background: rgba(255, 255, 255, 0.8);
+//         backdrop-filter: blur(12px);
+//         border-radius: 14px;
+//         max-width: 480px;
+//         height: 570px;
+//         margin: 85px 0;
+       
+   
+        
+       
+//     }
+
+//     &__step {
+//         margin-top: 126px;
+//         min-width:360px ;
+//     }
+
+//     &_text {
+//         font-size: 20px;
+//         line-height: 28px;
+//     }
+
+//     &__radio-wrapper {
+//         margin-top: 118px;
+//         text-align: column;
+//     }
+
+//     &__radio {
+//     }
+
+//     &__button {
+//         max-width:400px ;
+//         height:55px ;
+//         border-radius: 14px;
+//         background: $blue;
+//     }
+
+//     &__button-option {
+//         text-transform: uppercase;
+//        font-size: 15px;
+//        line-height: 13.5px;
+    
+//     }
+// }
+
+  

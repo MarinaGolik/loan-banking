@@ -1,0 +1,88 @@
+.faq {
+
+    padding: 100px 0 200px;
+
+    &__body {
+        margin-top: 70px;
+        display: flex;
+        justify-content: flex-end;
+
+        background: url(../img/background-green.png) no-repeat, 
+        url(../img/background-blue.png)  no-repeat; 
+        background-origin: border-box;
+        background-position: top left, right bottom;
+        background-size:510px, 610px;
+    }
+
+    &__content {
+        max-width: 1055px;
+        width: 100%;
+    }
+
+    &__item {
+        border-top: 1px solid $black;    
+    }
+
+    &__header {
+        padding: 30px 0;
+        position: relative;
+
+        @media screen and (max-width: 576px) {
+            padding: 20px 0;
+        }
+            
+
+        &::before{
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 1px;
+            background: $black;
+            transform: rotate(-90deg);
+            right: 10px;
+            top: 50%;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 25px;
+            height: 1px;
+            background: $black;
+            transform: rotate(0);
+            right: 10px;
+            top: 50%;
+        }
+    }
+
+    &__header-title {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        line-height: 36px;
+        max-width: 680px;
+        width: 100%;
+        padding-right: 45px;
+
+        @media screen and (max-width: 576px) {
+            font-size: 26px;
+            line-height: 31px;
+        }
+    }
+
+    &__text-wrapper {
+        padding: 10px 0 60px;
+        display: none;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 25.2px;
+        max-width: 680px;
+        width: 100%;
+
+        @media screen and (max-width: 576px) {
+            font-size: 15px;
+            line-height: 21px;
+        }
+    }
+}

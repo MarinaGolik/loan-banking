@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "OpenSans", sans-serif;
   line-height: 1.5;
   min-height: 100vh;
   display: flex;
@@ -57,4 +57,44 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.content-title {
+  font-family: "Ubuntu", sans-serif;
+  @include fonts (64px, 57.6px, 500);
+ 
+  color:$blue;
+  text-shadow: 5px 1px 0 $white, 6px 2px 0 $green;
+
+
+  
+  @media screen and (max-width: 768px) {
+    @include fonts(42px, 37.8px, 500);
+  }
+
+  @media screen and (max-width: 576px) {
+    @include fonts(36px, 32.4px, 500);
+  }
+  
+
+		&__transparent {
+      display: block;
+      position: relative;
+      padding-left: 120px;
+      color: transparent;
+      -webkit-text-stroke: 1px $blue;
+      text-shadow:none;
+     
+
+      @media screen and (max-width: 576px) {
+        padding-left: 50px;
+       
+     }
+		}
 }

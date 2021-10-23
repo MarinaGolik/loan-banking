@@ -1,0 +1,125 @@
+.preview {
+
+   
+    &__wrapper {
+        background: url(../img/backgraund1.jpg) 
+        no-repeat center/cover;
+        min-height: 740px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        
+    }
+
+    &__body {
+        display: grid; 
+        grid-template-columns:repeat (4, 260px); 
+        grid-template-rows: 1fr; 
+        gap: 0px 25px; 
+        grid-template-areas: 
+        ". . . ."; 
+        padding: 55px 0;
+        justify-content: center;
+
+
+        @media screen and (max-width:992px ) {
+            grid-template-columns: 260px 260px; 
+            grid-template-rows: 260px 260px; 
+            gap: 25px 25px; 
+            grid-template-areas: 
+            ". ."
+            ". ."; 
+                
+            }
+            @media screen and (max-width:576px){
+            grid-template-columns: 260px; 
+            grid-template-rows:repeat(4, 1fr); 
+            gap: 20px 0px; 
+            grid-template-areas: 
+              "."
+              "."
+              "."
+              "."; 
+
+            }
+
+            
+
+    }
+
+    &__card {
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(12px);
+        border-radius: 8px;
+        padding: 25px;
+        color: $light-blue;
+        max-width: 260px;
+        width: 100%;
+        min-height: 170px;
+        position: relative;
+        
+        &_link{
+            background: rgba(3, 154, 226, 0.55);
+
+        }
+       
+    }
+
+    &_number {
+        border: 1px solid $light-blue;
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        
+    }
+
+
+    &__num {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 10.8px;
+        
+    }
+
+    &__card-text {
+        font-family: "Ubuntu", sans-serif;
+        @include fonts (22px, 27.5px, 500);
+       
+        color: $light-blue;
+    }
+
+    &__link{
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+        left: 0;
+        right: 0;
+    }
+    &__card-title{
+        font-weight: 700;
+        font-size: 24px; 
+        line-height: 27.6px;
+        text-transform: uppercase;
+        color:$green;
+        margin-bottom: 18px;
+
+    }
+    &__button{
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        border: 1px solid $green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+
+    }
+
+
+
+}

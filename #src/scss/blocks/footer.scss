@@ -1,0 +1,166 @@
+.footer {
+    margin-top: 120px;
+    background: rgba(0, 30, 64, 1);
+
+    &__body {
+        color: $white;
+        
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 65px 0;
+
+
+        @media screen and (max-width: 992px) {
+            padding: 35px 0;
+         }
+
+         @media screen and (max-width: 576px) {
+            padding: 35px 0;
+            display: block;
+          
+         }
+    }
+
+   
+
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }    
+
+      &__item {
+        &:not(:last-child){
+            margin-right: 60px;
+        }
+
+        @media screen and (max-width: 992px) {
+            margin-right: 40px;
+         }
+
+         @media screen and (max-width: 576px) {
+            margin-top: 30px;
+          
+         }
+        
+      
+     }
+
+     &__link {
+        font-size: 17px;
+        line-height: 25.5px;
+        text-transform: uppercase;
+        color: $white;
+
+        @media screen and (max-width: 992px) {
+            font-size: 15px;
+         }
+      
+     }
+
+     &__content { 
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         border-top: 1px solid $white;  
+
+         
+         @media screen and (max-width: 576px) {
+           flex-direction: column;
+         }
+         
+    }
+
+    &__card {
+    
+        margin-top: 50px;
+        max-width: 380px;
+        min-height: 230px;
+        width: 100%;
+        background: rgba(0, 36, 77, 1);
+
+        &:not(:last-child){
+            margin-right: 30px;
+        }
+        @media screen and (max-width: 576px) {
+            max-width: 300px;
+            min-height: 185px;
+            width: 100%;
+            margin-top: 15px;
+            &:not(:last-child){
+                margin-right: 0;
+            }
+         }
+         
+        
+    }
+    
+
+    &__logo {
+    }
+
+    
+    &__img {
+        padding: 39px;
+
+    }
+       
+
+    &__card-text {
+        max-width: 300px;
+        padding-left: 30px;
+        font-size: 16px;
+        line-height: 22.4px;
+
+        @media screen and (max-width: 576px) {
+             font-size: 15px;
+             line-height: 21px;
+          }
+    }
+
+    &__bottom {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $white;  
+
+        @media screen and (max-width: 576px) {
+            margin-top: 40px;
+            flex-direction: column-reverse;
+            align-items: start;
+          }
+    }
+
+    &__copyright {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 0;
+
+        @media screen and (max-width: 576px) {
+            
+          }
+    }
+
+    &__list-item {
+       
+        &:not(:last-child){
+            margin-right: 60px;
+        }
+    }
+
+    &__list-link {
+        color: $white;
+    }
+}
