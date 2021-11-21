@@ -79,6 +79,7 @@
     &__card {
     
         margin-top: 50px;
+        padding: 39px;
         max-width: 380px;
         min-height: 230px;
         width: 100%;
@@ -106,16 +107,19 @@
 
     
     &__img {
-        padding: 39px;
-
+     
     }
        
 
     &__card-text {
         max-width: 300px;
-        padding-left: 30px;
+        padding-top: 39px;
         font-size: 16px;
         line-height: 22.4px;
+
+        @media screen and (max-width: 992px) {
+           flex-direction: column;
+         }
 
         @media screen and (max-width: 576px) {
              font-size: 15px;
@@ -130,11 +134,17 @@
         align-items: center;
         border-top: 1px solid $white;  
 
+        @media screen and (max-width: 992px) {
+            flex-direction: column;
+          }
+
         @media screen and (max-width: 576px) {
+            
             margin-top: 40px;
             flex-direction: column-reverse;
             align-items: start;
           }
+       
     }
 
     &__copyright {

@@ -16,6 +16,11 @@ body {
   scroll-behavior: smooth;
   z-index: 1;
   background: $white;
+  
+  &.active{
+    overflow: hidden;
+}
+
 }
 ul,
 ol,
