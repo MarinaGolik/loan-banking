@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "personalized": ">25k",
+      "name": "asdfgh",
+      "lastName": "dfgh",
+      "idNumber": "dfghj",
+      "dateBirth": "defrgthj",
+      "score": "excellent",
+      "id": 1
+    },
+    {
+      "personalized": ">5k",
+      "name": "juytre",
+      "lastName": "uhygtre",
+      "idNumber": "ertyhjm",
+      "dateBirth": "rtyhjm",
+      "score": "excellent",
+      "id": 12
+    },
+    {
+      "personalized": ">5k",
+      "name": ".ждлогне",
+      "lastName": "длогнек",
+      "idNumber": "шгне",
+      "dateBirth": "rtyhjm",
+      "score": "excellent",
+      "id": 13
+    },
+    {
+      "personalized": ">5k",
+      "name": "олд",
+      "lastName": "лор",
+      "idNumber": "125698745",
+      "dateBirth": "0225698",
+      "score": "excellent",
+      "id": 14
+    }
+  ]
+}

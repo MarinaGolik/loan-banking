@@ -1,6 +1,5 @@
 // const { name } = require("browser-sync");
 
-// const { lastRun } = require("gulp");
 jQuery(document).ready(function () {
 
    //----Format Webp---------
@@ -60,7 +59,9 @@ faqHeader.forEach ( header => {
       let parent = this.parentNode;
       let wrapper = parent.querySelector ('.faq__text-wrapper');
       wrapper.classList.toggle('active')
+   
    })
+  
 })
 
   // ------------- Form ---------------------------
@@ -151,57 +152,47 @@ const step_5 = `
 content.innerHTML = step_1;
 stepNum.innerHTML = step;
 
+// ф-ция первой формы. находим все кнопки с нужным именем. перебираем их
 function radioChecked() {
    let radioInput = content.querySelectorAll('input[name="personalized"]');
    radioInput.forEach(input => {
-
+      //и вешаем слуш.событий по клику, чекнутый инпут записать в массив данных
       input.addEventListener('click', function() { if (input.checked) {
-         data.personalized = input.getAttribute('data-attribute');
-         // data.score = input.getAttribute('data-att');
+         data.personalized = input.getAttribute('data-attribute');         
       } 
       })
 
    if (input.checked) {
-      data.personalized = input.getAttribute('data-attribute');
-      // data.score = input.getAttribute('data-att');
+      data.personalized = input.getAttribute('data-attribute');      
    } 
    if (data.personalized === input.getAttribute('data-attribute')) {
       input.setAttribute('checked', true)
    }
-   // if (data.score === input.getAttribute('data-att')) {
-   //    input.setAttribute('checked', true)
-   // }
- })   
+ 
+ }) 
+}  
+// ф-ция 4го стека. находим все кнопки с нужным именем. перебираем их
  function radioCheckedScore() {
    let radioInputScore = content.querySelectorAll('input[name="score"]');
-   radioInputScore.forEach(input => {
+   
+   radioInputScore.forEach(input => {     
 
       input.addEventListener('click', function() { if (input.checked) {
-         data.score = input.getAttribute('data-attribute');
-         // data.score = input.getAttribute('data-att');
+         data.score = input.getAttribute('data-attribute');        
       } 
       })
 
    if (input.checked) {
       data.score = input.getAttribute('data-attribute');
-      // data.score = input.getAttribute('data-att');
-   } 
-   // if (data.score === input.getAttribute('data-attribute')) {
-   //    input.setAttribute('checked', true)
-   // }
-   // if (data.score === input.getAttribute('data-att')) {
-   //    input.setAttribute('checked', true)
-   // }
+    } 
+  
  })   
 }
-}
 
-// radioChecked()
-
-
+/*ф-ция 2 и 3 шага . находим все поля для ввода. перебираем их
+ и записываем их значения в массив data */
 function inputVal() {
    let inputs = content.querySelectorAll('input[type = "text"]');
-  
    inputs.forEach (input => {
       switch (input.getAttribute ('name')) {
          case 'name':
@@ -219,10 +210,6 @@ function inputVal() {
       }       
     })  
 }
-
-
-
-
 
 //счетчик шага  вверх
 function countUp() {
@@ -258,52 +245,83 @@ function stepUp() {
       if (data.idNumber.length !== 0 && data.dateBirth.length !== 0) {         
          content.innerHTML = step_4;
          countUp();
-         console.log(data);
-      }
+         }
    } else if (step === 4) {
       radioCheckedScore();
       // Проверяем выбрана ли одна из radio button
       if (data.score.length !== 0) {
          submitForm();
-         console.log(data);
-         content.innerHTML = step_5;
-        
-       
+         content.innerHTML = step_5;  
+         countUp();  
+         console.log(data);             
       }   
+
+      //на пятом степе убрала стрелку и кнопку
+    } if (step===5){
+    
+      let noneBack = document.querySelectorAll ('.contact__prev');
+          noneButton = document.querySelectorAll ('.form__button');
+      // console.log( noneBack);
+      noneBack.forEach(function(elem){
+         elem.parentNode.removeChild(elem)
+      })
+      noneButton.forEach(function(elem){
+         elem.parentNode.removeChild(elem)
+      })
+
     }
 }
 
 
-
-
+//функция, кот отрисовывает степы назад
 function stepDown() {
    switch (step) {
-      case 4:
-         content.innerHTML=step_3;  
-         countDown();  
-         inputVal();     
-         backBatton.classList.toggle('disable'); 
+      case 2:
+         content.innerHTML=step_1;  
+         countDown(); 
+         radioChecked();  
+         backBatton.classList.toggle('disable');              
          break;
       case 3:
          content.innerHTML=step_2;  
          countDown();  
          inputVal();     
          break;
-      case 2:
-         content.innerHTML=step_1;  
+      case 4:
+         content.innerHTML=step_3;  
          countDown(); 
-         radioChecked();               
+         radioCheckedScore();     
          break;
-     
+               
    }
 }
-
+//по клику на кнопку далее вкл.ф-цию stepUp. 
+// перед этим сделать ей дефолтное состояние
 button.addEventListener('click', (e)=> {
    e.preventDefault();
    stepUp()
    
 })
-
+//по клику на стрелку назад вкл.ф-цию  stepDown. 
 backBatton.addEventListener('click', ()=> {
    stepDown()
+  
 })
+
+//отправка формы на сервер . ф. ассинхронная. 
+
+let submitForm = async() =>{
+   try {
+      await fetch ('http://localhost:8000/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+         body: JSON.stringify(data)
+      });
+   } catch (e){
+         console.log(error);
+      }      
+   }
+
+  
