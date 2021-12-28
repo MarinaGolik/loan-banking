@@ -78,7 +78,12 @@
        @media screen and (max-width:768px ) {
          font-size: 30px;
          line-height: 45px;
-         color: white;       
+         color: white;   
+         &:hover{
+            &::after{
+                background: $white;    
+            }
+        }    
     }
 }
     .burger {        
@@ -108,15 +113,18 @@
               }
            }
            &.active {
+      
               span {
                  transform: scale(0);
                  &:first-child {
+                    background-color: $white;
                     transform: rotate(-45deg);
                     top: calc(50% - 1px);
                  }
                  &:last-child {
                     transform: rotate(45deg);
                     bottom: calc(50% - 1px);
+                    background-color: $white;                   
                  }
               }
            }

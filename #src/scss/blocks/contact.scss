@@ -110,7 +110,7 @@
    &__title {
       font-weight: 600;
       font-size: 20px;
-      line-height: 140%;
+      line-height: 28px;
       color: #313131;
       
       &_end {
@@ -118,6 +118,18 @@
          line-height: 62px;
          color: $blue;
       }
+      @media screen and (max-width: 768px) {
+         font-size: 18px;
+         line-height: 25px;
+         &_end {
+            font-size: 38px;
+            line-height: 44px;
+           
+         }
+      }
+
+
+
    }
 
    &__radio-btn {
@@ -126,15 +138,26 @@
       &:not(:last-child) {
          margin-bottom: 25px;
       }
+      @media screen and (max-width: 768px) {
+         &:not(:last-child) {
+            margin-bottom: 18px;
+         }
+      }
+           
+
    }
 
    &__radio-text {
       margin-left: 8px;
       font-weight: 600;
       font-size: 15px;
-      line-height: 125%;
+      line-height: 19px;
       color: #313131;
       text-transform: uppercase;
+      @media screen and (max-width: 768px) {
+         font-size: 13px;
+         line-height: 16px;
+      }
    }
 
    &__input {
@@ -158,7 +181,17 @@
          line-height: 90%;
          color: #999999;
       }
-   }
+
+      @media screen and (max-width: 768px) {
+         max-width: 312px;
+         height: 48px;   
+
+         &:not(:first-child) {
+            margin-top: 27px;
+         }            
+      }
+   }  
+  
 
    &__button {
       background: #039ae2;
@@ -177,7 +210,7 @@
       @media screen and (max-width: 768px) {
         max-width: 312px;
         height: 48px;
-        margin: 45px auto 0;
+        margin: 40px auto 0;
       }
    }
 }

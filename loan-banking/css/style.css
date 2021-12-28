@@ -590,7 +590,7 @@ img {
 .form__title {
   font-weight: 600;
   font-size: 20px;
-  line-height: 140%;
+  line-height: 28px;
   color: #313131;
 }
 
@@ -612,7 +612,7 @@ img {
   margin-left: 8px;
   font-weight: 600;
   font-size: 15px;
-  line-height: 125%;
+  line-height: 19px;
   color: #313131;
   text-transform: uppercase;
 }
@@ -803,6 +803,7 @@ img {
 .footer__list-link {
   font-size: 15px;
   line-height: 21px;
+  font-weight: 400;
   color: #fafafa;
 }
 
@@ -956,6 +957,10 @@ img {
     color: white;
   }
 
+  .header__link:hover::after {
+    background: #fafafa;
+  }
+
   .about__item {
     max-width: 360px;
     min-height: 252px;
@@ -981,10 +986,38 @@ img {
     height: 100%;
   }
 
+  .form__title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .form__title_end {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .form__radio-btn:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  .form__radio-text {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .form__input {
+    max-width: 312px;
+    height: 48px;
+  }
+
+  .form__input:not(:first-child) {
+    margin-top: 27px;
+  }
+
   .form__button {
     max-width: 312px;
     height: 48px;
-    margin: 45px auto 0;
+    margin: 40px auto 0;
   }
 
   .footer__card {
@@ -1048,6 +1081,7 @@ img {
   }
 
   .header .burger.active span:first-child {
+    background-color: #fafafa;
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -1059,6 +1093,7 @@ img {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     bottom: calc(50% - 1px);
+    background-color: #fafafa;
   }
 }
 
