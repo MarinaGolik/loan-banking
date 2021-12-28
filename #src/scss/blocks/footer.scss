@@ -2,6 +2,10 @@
     margin-top: 120px;
     background: rgba(0, 30, 64, 1);
 
+    @media screen and (max-width: 992px) {
+        margin-top: 100px;
+    }
+
     &__body {
         color: $white;
         
@@ -25,9 +29,6 @@
          }
     }
 
-   
-
-
     &__nav {
         display: flex;
         justify-content: space-between;
@@ -40,15 +41,14 @@
         }
 
         @media screen and (max-width: 992px) {
-            margin-right: 40px;
+            &:not(:last-child){
+                margin-right: 40px;
+            }            
          }
 
          @media screen and (max-width: 576px) {
-            margin-top: 30px;
-          
-         }
-        
-      
+            margin-top: 30px;          
+         }             
      }
 
      &__link {
@@ -59,8 +59,7 @@
 
         @media screen and (max-width: 992px) {
             font-size: 15px;
-         }
-      
+         }      
      }
 
      &__content { 
@@ -70,10 +69,9 @@
          border-top: 1px solid $white;  
 
          
-         @media screen and (max-width: 576px) {
+         @media screen and (max-width: 672px) {
            flex-direction: column;
-         }
-         
+         }         
     }
 
     &__card {
@@ -81,49 +79,56 @@
         margin-top: 50px;
         padding: 39px;
         max-width: 380px;
-        min-height: 230px;
+        height: 230px;
         width: 100%;
         background: rgba(0, 36, 77, 1);
 
         &:not(:last-child){
             margin-right: 30px;
         }
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 992px) {
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            max-width: 224px;
+            height: 230px;
+            padding: 15px 11px;
+            margin-top: 32px;
+          }
+          @media screen and (max-width: 672px) {
+
             max-width: 300px;
-            min-height: 185px;
-            width: 100%;
+            height: 165px;
             margin-top: 15px;
+
             &:not(:last-child){
                 margin-right: 0;
+                }           
             }
-         }
-         
-        
-    }
-    
-
-    &__logo {
-    }
-
-    
-    &__img {
-     
-    }
-       
-
+        }
+ 
+    &__img{    
+        @media screen and (max-width: 672px) {
+            max-width: 122px;
+            }  
+        }
+  
     &__card-text {
         max-width: 300px;
         padding-top: 39px;
         font-size: 16px;
         line-height: 22.4px;
 
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 768px) {
            flex-direction: column;
          }
 
-        @media screen and (max-width: 576px) {
-             font-size: 15px;
-             line-height: 21px;
+        @media screen and (max-width: 672px) {
+            font-size: 15px;
+            line-height: 21px;
+            padding-top: 36px;
+
           }
     }
 
@@ -134,22 +139,24 @@
         align-items: center;
         border-top: 1px solid $white;  
 
-        @media screen and (max-width: 992px) {
-            flex-direction: column;
-          }
-
-        @media screen and (max-width: 576px) {
-            
+        @media screen and (max-width: 596px) {
             margin-top: 40px;
             flex-direction: column-reverse;
-            align-items: start;
+            align-items: center;
           }
-       
+            @media screen and (max-width: 398px) {
+                align-items: flex-start;
+          }       
     }
 
     &__copyright {
         font-size: 15px;
         line-height: 21px;
+        
+         @media screen and (max-width: 596px) {           
+            margin-bottom: 16px; 
+            text-align: start;           
+         }
     }
 
     &__list {
@@ -158,19 +165,36 @@
         align-items: center;
         padding: 22px 0;
 
-        @media screen and (max-width: 576px) {
-            
+        @media screen and (max-width: 768px) {
+            padding: 16px 0;            
+        }
+
+        @media screen and (max-width: 396px) {
+            flex-wrap: wrap;         
           }
     }
 
-    &__list-item {
-       
+    &__list-item {              
         &:not(:last-child){
             margin-right: 60px;
+        }
+        @media screen and (max-width: 768px) {
+            &:not(:last-child){
+                margin-right: 30px;            
+            }
+        }
+        @media screen and (max-width: 396px) {
+          
+           padding: 8px 0;
+           &:not(:last-child){
+            margin-right: 20px;            
+            }
         }
     }
 
     &__list-link {
+        font-size: 15px;
+        line-height: 21px;
         color: $white;
     }
 }

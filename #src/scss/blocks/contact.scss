@@ -1,6 +1,14 @@
 .contact {
+   padding: 85px 0 ;
+
    background: url("../img/backgraund2.jpg") no-repeat center/cover;
-   padding: 85px 0;
+   height: 740px;
+
+   
+   @media screen and (max-width: 768px) {
+      padding: 24px 0 ; 
+      height: 510px;    
+  }
 
    &__wrapper {
       background: rgba(255, 255, 255, 0.8);
@@ -8,7 +16,13 @@
       border-radius: 14px;
       padding: 35px 40px 30px;
       max-width: 480px;
-      min-height: 608px;
+      height: 608px;
+
+      @media screen and (max-width: 768px) {
+          max-width: 336px;
+          height: 432px;  
+          padding: 21px 12px 12px;    
+      }  
    }
 
    &__prev {
@@ -23,6 +37,9 @@
          .contact__arrow {
             fill: $grey2;
          }
+      }
+      @media screen and (max-width: 768px) {
+         margin-bottom: 30px;   
       }
    }
 
@@ -65,7 +82,6 @@
 .form {
    &__body {
       display: flex;
-   
    }
 
    &__wrapper {
@@ -84,6 +100,11 @@
       &.no-title {
          justify-content: flex-end;
       }
+
+      @media screen and (max-width: 768px) {
+        min-height: 220px;
+         height: 100%; 
+     }
    }
 
    &__title {
@@ -152,5 +173,13 @@
       color: #fff;
       text-transform: uppercase;
       cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        max-width: 312px;
+        height: 48px;
+        margin: 45px auto 0;
+      }
    }
 }
+
+

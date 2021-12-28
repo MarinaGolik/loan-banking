@@ -16,8 +16,11 @@ jQuery(document).ready(function () {
          document.querySelector('body').classList.add('webp');
       }
    });
-});
-// --------------меню бургер----------------
+
+
+
+  //-------------------js----------------------
+  // --------------меню бургер----------------
 
  let burger = document.querySelector('.burger'),
      nav = document.querySelector('.header__nav'),
@@ -29,6 +32,7 @@ jQuery(document).ready(function () {
    nav.classList.toggle('active')
    body.classList.toggle('active')
  });
+
 // -------------плавный скрол-----------------
 
 let link = document.querySelectorAll('a[href*="#"]');
@@ -40,28 +44,31 @@ link.forEach(elem => {
       let id = elem.getAttribute('href');
       document.querySelector(id).scrollIntoView ({
          behavior: "smooth"         
-      })    
-      
+      })          
    })
 })
 
-// ----------------гармошка аккардион-----------------
+// ----------------аккордеон-----------------
 
 let faqHeader = document.querySelectorAll('.faq__header');
-
-faqHeader.forEach ( header => {
-   header.addEventListener ('click', function() {
+   faqHeader.forEach ( header => {
+   header.addEventListener ('click', function () {
       let wrapperActive = document.querySelectorAll ('.faq__text-wrapper.active');
-      wrapperActive.forEach ( wrapp => {
-         wrapp.classList.remove('active')
+      wrapperActive.forEach ( wrapp => {        
+       wrapp.classList.remove('active')      
       })
-
       let parent = this.parentNode;
-      let wrapper = parent.querySelector ('.faq__text-wrapper');
-      wrapper.classList.toggle('active')
-   
-   })
-  
+      let wrapper = parent.querySelector('.faq__text-wrapper');               
+           wrapper.classList.toggle('active')
+           header.classList.add('hide')
+
+       if ( header.classList.contains('hide') &&  wrapper.classList.contains('active')) {
+           console.log(155);
+            wrapperActive.forEach ( wrapp => {        
+            wrapp.classList.remove('active')
+            })
+         }   
+    })
 })
 
   // ------------- Form ---------------------------
@@ -187,7 +194,7 @@ function radioChecked() {
     } 
   
  })   
-}
+} 
 
 /*ф-ция 2 и 3 шага . находим все поля для ввода. перебираем их
  и записываем их значения в массив data */
@@ -323,5 +330,287 @@ let submitForm = async() =>{
          console.log(error);
       }      
    }
+   
+
+//   // --------------меню бургер--jquery--------------
+
+//    let allMenu=$('.burger, .header__nav, body');
+//    $('.burger').on('click', function () {
+//       allMenu.toggleClass('active')
+      
+//    })
+//   // -------------плавный скрол--jquery---------------
+//   $ ('a[href*="#"]').on('click', function(e) {
+//      e.preventDefault();
+//      $('html, body').animate({
+//         scrollTop: $($(this).attr('href')).offset().top,
+//      },800,
+//       'linear');
+//   })
+// // ----------------гармошка аккордеон----jquery-------------
+
+// $('.faq__header').on ('click', function() {
+//    $(' .faq__text-wrapper.active').removeClass('active');
+//    $(this).parent().children('.faq__text-wrapper').toggleClass('active');
+     
+//    })
+//  // ------------- Form ---------------------------
+
+//   let button = $('#button'),
+//       backBatton = $('.contact__prev'),
+//       content = $('.form__content'),
+//       stepNum = $('#progresNumber'),
+//       step = 1,
+
+//   data = {
+//      personalized: '',
+//      name: '',
+//      lastName: '',
+//      idNumber: '',
+//      dateBirth: '',
+//      score: '',
+//   };
+
+// const step_1 = `
+// <p class="form__title">
+//   Request your personalized loan-proposal
+// </p>
+// <div class="form__wrapper">
+//   <label for="radio1" class="form__radio-btn">
+//      <input class="form__radio-input" type="radio" name="personalized" id="radio1" data-attribute='<5k'>
+//      <span class="form__radio-text">Less than €5,000</span>
+//   </label>
+//   <label for="radio2" class="form__radio-btn">
+//      <input class="form__radio-input" type="radio" name="personalized" id="radio2" data-attribute='>5k'>
+//      <span class="form__radio-text">€5,000-€25,000</span>
+//   </label>
+//   <label for="radio3" class="form__radio-btn">
+//      <input class="form__radio-input" type="radio" name="personalized" id="radio3" data-attribute='>25k'>
+//      <span class="form__radio-text">More than €25,000</span>
+//   </label>
+// </div>   
+// `
+// const step_2 = `
+// <p class="form__title">
+// Fill the rows below to suits better loan-offer for you
+// </p>
+// <div class="form__wrapper">
+//   <input type="text" name='name' class="form__input" placeholder="First name">
+//   <input type="text" name='lastName' class="form__input" placeholder="Last name">
+// </div>
+// `
+
+// const step_3 = `
+// <p class="form__title">
+
+// </p>
+// <div class="form__wrapper">
+//   <input type="text" name='idNumber' class="form__input" placeholder="ID-number" data-attribute='idnumber'>
+//   <input type="text" name='dateBirth' class="form__input" placeholder="Date of birth" data-attribute='dateBirth'>
+// </div>
+// `
+
+// const step_4 = `
+// <p class="form__title">
+// Credit score
+// </p>
+// <div class="form__wrapper">
+// <label for="radio1" class="form__radio-btn">
+//    <input class="form__radio-input" type="radio" name="score" id="radio1" data-attribute='excellent'>
+//    <span class="form__radio-text"> Excellent (720-850)</span>
+// </label>
+// <label for="radio2" class="form__radio-btn"> 
+//    <input class="form__radio-input" type="radio" name="score" id="radio2" data-attribute='good'>
+//    <span class="form__radio-text"> Good (680-719)</span>
+// </label>
+// <label for="radio3" class="form__radio-btn">
+//    <input class="form__radio-input" type="radio" name="score" id="radio3" data-attribute='fair'>
+//    <span class="form__radio-text">Fair (640-679)</span>
+// </label>
+// <label for="radio4" class="form__radio-btn">
+//    <input class="form__radio-input" type="radio" name="score" id="radio4" data-attribute='poor'>
+//    <span class="form__radio-text">Poor (0-639)</span>
+// </label>
+// </div>
+// `
+
+// const step_5 = `
+//    <p class="form__title form__title_end " >
+//    Thank you for filling out the form! </p>
+// `
+
+// content.html(step_1);
+// stepNum.html(step);
+
+// // ф-ция первой формы. находим все кнопки с нужным именем. перебираем их
+// function radioChecked() {
+//    let radioInput =$('input[name="personalized"]');
+//    $.each(radioInput,  function() {
+    
+//       $(this).on('click', function()  {
+//          data.personalized = $(this).attr('data-attribute');         
+//       })  
+
+//    if (data.personalized === $(this).attr('data-attribute')) {
+//       $(this).attr('checked', true)
+//    } 
+//  }) 
+// }  
+// radioChecked()
+// // ф-ция 4го стека. находим все кнопки с нужным именем. перебираем их
+// function radioCheckedScore() {
+//    let radioInputScore =$('input[name="score"]');
+//    $.each(radioInputScore,  function() {
+    
+//       $(this).on('click', function()  {
+//          data.score = $(this).attr('data-attribute');         
+//       })  
+
+//    if (data.score === $(this).attr('data-attribute')) {
+//       $(this).attr('checked', true)
+//    } 
+//  }) 
+// }  
+
+
+
+
+// /*ф-ция 2 и 3 шага . находим все поля для ввода. перебираем их
+//  и записываем их значения в объект data */
+// function inputVal() {
+
+//    let inputs = $('input[type = "text"]');
+//    $.each (inputs, function() {
+//       let input=$(this)
+
+//       switch (input.attr('name')) {
+//          case 'name':
+//             data.name = input.val();
+//             break;
+//          case 'lastName':
+//             data.lastName = input.val();
+//             break;
+//          case 'idNumber':
+//             data.idNumber = input.val();
+//             break;
+//          case 'dateBirth':
+//             data.dateBirth = input.val();
+//             break;
+//       }       
+//     })  
+// }
+
+// //счетчик шага  вверх
+// function countUp() {
+//    ++step
+//    stepNum.html(step);
+// }
+// //счетчик шага вниз
+// function countDown() {
+//    --step
+//    stepNum.html(step);
+// }
+
+// //функция, кот отрисовывает степы вперед
+// function stepUp() {
+//    if (step === 1) {
+//       radioChecked();
+//       // Проверяем выбрана ли одна из radio button
+//       if (data.personalized.length !== 0) {
+//          content.html(step_2);
+//          countUp();
+//          backBatton.toggleClass('disable')
+//       }
+//    } else if (step === 2) {
+//        inputVal();
+//       // Проверяем, заполнены ли данные
+//       if (data.name.length !== 0 && data.lastName.length !== 0) {
+//          content.html(step_3);
+//          countUp();        
+//       }
+//    } else if (step === 3) {
+//       inputVal();
+//       //Проверяем, заполнены ли данные
+//       if (data.idNumber.length !== 0 && data.dateBirth.length !== 0) {         
+//          content.html(step_4);
+//          countUp();
+//          }
+//    } else if (step === 4) {
+//       radioCheckedScore();
+//       // Проверяем выбрана ли одна из radio button
+//       if (data.score.length !== 0) {
+//           content.html(step_5);
+//          countUp(); 
+//          submitForm(); 
+//          console.log(data);             
+//       }   
+
+//       //на пятом степе убрала стрелку и кнопку
+//     } if (step===5){    
+//       let noneBack = $('.contact__prev');
+//       let noneButton =$('.form__button');
+      
+//       noneBack.remove(); 
+//       noneButton.remove();     
+//     }
+// }
+   
+
+
+// //функция, кот отрисовывает степы назад
+// function stepDown() {
+//    switch (step) {
+//       case 2:
+//          content.html(step_1);  
+//          countDown(); 
+//          radioChecked();  
+//          backBatton.toggleClass('disable');              
+//          break;
+//       case 3:
+//          content.html(step_2);  
+//          countDown();  
+//          inputVal();     
+//          break;
+//       case 4:
+//          content.html(step_3);
+//          countDown(); 
+//          radioCheckedScore();     
+//          break;
+               
+//    }
+// }
+// //по клику на кнопку далее вкл.ф-цию stepUp. 
+// // перед этим сделать ей дефолтное состояние
+// button.on('click', (e)=> {
+//    e.preventDefault();
+//    stepUp()
+   
+// })
+// //по клику на стрелку назад вкл.ф-цию  stepDown. 
+// backBatton.on('click', ()=> {
+//    stepDown()
+  
+// })
+// // console.log(data);
+// const submitForm = async () => {
+//    try {
+//       await $.ajax({
+//          url: 'http://localhost:8000/posts',
+//          type: 'POST',
+//          data: {
+//             personalized: data.personalized,
+//             name: data.name,
+//             lastName: data.lastName,
+//             idNumber: data.number,
+//             birthDate: data.date
+//          }
+//       })
+//    } catch (error) {
+//       console.error(error);
+//    }
+// }
+
+});
+
 
   

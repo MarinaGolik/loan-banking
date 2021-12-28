@@ -2,17 +2,21 @@
 
     padding: 100px 0 200px;
 
+    background: url(../img/elipse_green.png) 140px 100px no-repeat, 
+         url(../img/elipse_blue.png) 680px 480px no-repeat;
+          background-size: 640px, 8000px;
+
+
+          @media screen and (max-width: 992px) {
+            padding: 70px 0;
+        }
+
     &__body {
         margin-top: 70px;
         display: flex;
         justify-content: flex-end;
-
-        background: url(../img/background-green.png) no-repeat, 
-        url(../img/background-blue.png)  no-repeat; 
-        background-origin: border-box;
-        background-position: top left, right bottom;
-        background-size:510px, 610px;
     }
+
 
     &__content {
         max-width: 1055px;
@@ -20,13 +24,14 @@
     }
 
     &__item {
-        border-top: 1px solid $black;    
+        border-top: 1px solid $black;     
     }
 
     &__header {
         padding: 30px 0;
         position: relative;
 
+      
         @media screen and (max-width: 576px) {
             padding: 20px 0;
         }
@@ -54,8 +59,6 @@
         }
     }
 
-    
-
     &__header-title {
         display: flex;
         align-items: center;
@@ -78,6 +81,7 @@
         &.active {
             display: block;
          }
+       
     }
 
     &__text {
@@ -85,6 +89,7 @@
         line-height: 25.2px;
         max-width: 680px;
         width: 100%;
+        
 
         @media screen and (max-width: 576px) {
             font-size: 15px;
